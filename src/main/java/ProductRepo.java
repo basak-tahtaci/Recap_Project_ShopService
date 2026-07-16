@@ -5,7 +5,7 @@ public class ProductRepo {
     List<Product> productList = new ArrayList<>();
 
 
-  ProductRepo(List<Product> productList){
+  ProductRepo(){
 
       this.productList = productList;
   }
@@ -48,4 +48,15 @@ public class ProductRepo {
           }
       }
   }
+
+    public Product getById(String idToFind) {
+
+      for (Product product : productList){
+
+          if (product.id().equals(idToFind))
+              return product;
+      }
+
+      return null;
+    }
 }
